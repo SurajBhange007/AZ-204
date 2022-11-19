@@ -1,0 +1,29 @@
+mkdir htmlapp
+
+cd htmlapp
+
+git clone https://github.com/Azure-Samples/html-docs-hello-world.git
+
+#Set variables to hold the resource group and app names by running the following commands.
+
+resourceGroup=$(az group list --query "[].{id:name}" -o tsv) appName=az204app$RANDOM
+
+################################################################################################
+
+#Change to the directory that contains the sample code and run the az webapp up command.
+
+cd html-docs-hello-world
+
+az webapp up -g $resourceGroup -n $appName --html
+
+#this app will be live on https://<myAppName>.azurewebsites.net
+
+
+###to update file write following command
+
+code index.html
+
+#use ctrl+s and ctrl+q to save and exit
+
+#now redeploy the app with same command used previously
+

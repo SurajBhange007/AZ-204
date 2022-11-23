@@ -27,3 +27,10 @@ code index.html
 
 #now redeploy the app with same command used previously
 
+# command to create resource group using cli command 
+az  group create --name cligroup --location eastus
+
+#command to create vm using CLI command
+az vm create --resource-group cligroup --name newvmfromcli --image win2019datacenter --admin-username suraj
+
+

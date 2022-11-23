@@ -27,10 +27,16 @@ code index.html
 
 #now redeploy the app with same command used previously
 
+
+#********************************************************CLI commands
 # command to create resource group using cli command 
 az  group create --name cligroup --location eastus
 
 #command to create vm using CLI command
 az vm create --resource-group cligroup --name newvmfromcli --image win2019datacenter --admin-username suraj
 
+
+#*********************************************************PowerShell Commands
+New-AzResourceGroup -Name powershellgroup -Location EastUS    
+New-AzVM -ResourceGroupName powershellgroup -name aznewvm -Location EastUS -VirtualNetworkName myvirtnet -SubnetName subnetsuraj -SecurityGroupName security -PublicIpAddressName publicip -OpenPorts 3892,80,443
 

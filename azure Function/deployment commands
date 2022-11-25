@@ -40,3 +40,6 @@ az vm create --resource-group cligroup --name newvmfromcli --image win2019datace
 New-AzResourceGroup -Name powershellgroup -Location EastUS    
 New-AzVM -ResourceGroupName powershellgroup -name aznewvm -Location EastUS -VirtualNetworkName myvirtnet -SubnetName subnetsuraj -SecurityGroupName security -PublicIpAddressName publicip -OpenPorts 3892,80,443
 
+
+#***************************************command to get all commands
+get-command *AzWebApp*
